@@ -1,0 +1,67 @@
+<%- include('partials/_header') %>
+<!-- Contact Section-->
+<section class="page-section" id="contact">
+	<br />
+	<br />
+	<br />
+	<br />
+	<div class="container">
+		<!-- Contact Section Heading-->
+		<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+		<!-- Icon Divider-->
+		<div class="divider-custom">
+			<div class="divider-custom-line"></div>
+			<div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+			<div class="divider-custom-line"></div>
+		</div>
+		<!-- Contact Section Form-->
+		<div class="row justify-content-center">
+			<div class="col-lg-8 col-xl-7">
+			
+				<form id="contactForm" data-sb-form-api-token="API_TOKEN"  method="POST" action="/photos/<%= photo._id %>?_method=PUT" class="tm-contact-form" encType="multipart/form-data">
+					<!-- Name input-->
+					<div class="form-floating mb-3">
+						<input
+						value="<%=photo.title%>"
+							class="form-control"
+							id="name"
+							type="text"
+							placeholder="Enter your project title..."
+							data-sb-validations="required"
+						/>
+						<label for="name">Project Title</label>
+						
+					</div>
+					<!-- Message input-->
+					<div class="form-floating mb-3">
+						<textarea
+							class="form-control"
+							id="message"
+							type="text"
+							placeholder="Enter your project description here..."
+							style="height: 10rem"
+							data-sb-validations="required"
+						><%=photo.description%></textarea>
+						<label for="message">Project Description</label>
+						
+					</div>
+					
+					<!-- Submit Button-->
+					<button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit"> Project Update</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<%- include('partials/_footer') %>
+<!-- Bootstrap core JS-->
+<script src="/https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="/js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="/https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>
